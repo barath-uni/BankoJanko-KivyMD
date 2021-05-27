@@ -1,0 +1,43 @@
+
+<Login>:
+    BoxLayout:
+        padding: 40
+        spacing: 80
+        size: self.parent.size
+        pos: self.parent.pos
+        orientation: 'vertical'
+        Image:
+            source: 'pnglogo.png'
+            size_hint: None, None
+            pos_hint: {"center_x": 0.5, "center_y":0.5}
+        BoxLayout:
+            orientation: 'vertical'
+            id: input_field
+            MDTextField:
+                id: username
+                hint_text: "Enter Bank User Id"
+                size_hint: (.6, None)
+                pos_hint: {'center_x':.5, 'center_y':.5}
+                height: 100
+                width: 360
+                font_size: 50
+            MDTextField:
+                id: password
+                hint_text: "Enter Password"
+                size_hint: (.6, None)
+                pos_hint: {'center_x':.5, 'center_y':.5}
+                height: 100
+                width: 360
+                font_size: 50
+        MDRaisedButton:
+            text: "Submit"
+            size_hint: None, None
+            pos_hint: {'center_x':.5, 'center_y':.5}
+            on_release:
+                print("Fire On Click")
+                root.open_home()
+        MDCard:
+            MDLabel:
+                id: error_msg
+                halign : "center"
+                text: ""

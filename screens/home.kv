@@ -1,0 +1,33 @@
+<Home>:
+    id:home_screen
+    BoxLayout:
+        orientation:'vertical'
+        MDToolbar:
+            title: "Welcome"
+            pos_hint: {'top':1.0}
+            md_bg_color: app.theme_cls.accent_color
+            right_action_items: [["dots-vertical", lambda x: app.callback()]]
+        MDSeparator:
+        BoxLayout:
+            id: main_box_layout
+            padding: 5
+            spacing: 5
+            orientation:'vertical'
+            MDSeparator:
+            MDSeparator:
+            BoxLayout:
+                MDCard:
+                    orientation: 'vertical'
+                    MDLabel:
+                        text: "Money Transfer"
+                    BoxLayout:
+                        MDRectangleFlatButton:
+                            text: "Same Bank"
+                            on_press:
+                                root.manager.transition.direction='left'
+                                root.manager.current='money_transfer_screen'
+                        MDRectangleFlatButton:
+                            text: "Other Bank"
+                            on_press:
+                                root.manager.transition.direction='left'
+                                root.manager.current='money_transfer_screen'

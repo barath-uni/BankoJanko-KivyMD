@@ -1,0 +1,34 @@
+<MoneyTransfer>:
+    id:money_transfer_screen
+    MDBoxLayout:
+        orientation: 'vertical'
+        MDToolbar:
+            title: "Welcome"
+            pos_hint: {'top':1.0}
+            md_bg_color: app.theme_cls.accent_color
+            right_action_items: [["dots-vertical", lambda x: app.callback()]]
+        MDSeparator:
+        MDCard:
+            MDLabel:
+                text: "Transfer Money"
+                theme_text_color: "Secondary"
+        MDSeparator:
+        MDBoxLayout:
+            pos_hint: {"bottom":0.75}
+            padding: 10
+            orientation: 'vertical'
+            MDTextField:
+                id: dest_account_number
+                hint_text: "Enter Dest Acc Number"
+            MDTextField:
+                id: amount
+                hint_text: "Enter Amount"
+            MDTextField:
+                id: ifsc_swift_code
+                hint_text: "Enter Swift Code"
+            MDRaisedButton:
+                text: "Confirm"
+                on_press:
+                    root.transfer_money()
+        MDLabel:
+            id: confirmation_label
